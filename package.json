@@ -27,8 +27,7 @@
     "aws"
   ],
   "dependencies": {
-    "bravado-lambda": "file:../bravado-lambda/",
-    "bravado-schema": "file:../bravado-schema/",
+    "bravado-core": "acdaniel/bravado-core#develop",
     "bunyan": "^1.4.0",
     "commander": "^2.8.1",
     "convict": "^1.0.1",
