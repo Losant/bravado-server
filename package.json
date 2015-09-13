@@ -34,6 +34,7 @@
     "debug": "^2.2.0",
     "defaults": "^1.0.2",
     "defined": "^1.0.0",
+    "dotenv": "^1.2.0",
     "inflection": "^1.7.1",
     "q": "^1.4.1",
     "restify": "^4.0.0"
