@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+var program = require('commander');
+var dotenv = require('dotenv');
+
+program
+  .usage('<api>')
+  .option('-h, --host <host>', 'Host for server to listen on', '')
+  .option('-p, --port <port>', 'Port for server to listen on', 8081)
+  .option('--env <env>', 'File to load ENV variables from')
+  .action(function (api, program) {
+    if (program.env) {
+      console.log('Loading env vars: %s', program.env);
+      dotenv.load({ path: program.env });
+    }
+    var server = require('../lib/index');
+    server.start(api, {
+      host: program.host,
+      port: program.port
+    });
+  })
+  .parse(process.argv);
