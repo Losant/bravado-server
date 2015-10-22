@@ -1,7 +1,7 @@
 {
   "name": "bravado-server",
   "version": "0.2.0",
-  "description": "Local server for the Bravado REST API framework",
+  "description": "Server for the Bravado REST API framework",
   "directories": {
     "lib": "lib"
   },
@@ -20,14 +20,13 @@
   },
   "keywords": [
     "rest",
-    "client",
+    "restful",
     "server",
     "api",
-    "lambda",
-    "aws"
+    "bravado"
   ],
   "dependencies": {
-    "bravado-core": "acdaniel/bravado-core#develop",
+    "bravado-core": "^0.3.0",
     "bunyan": "^1.4.0",
     "commander": "^2.8.1",
     "convict": "^1.0.1",
