@@ -1,6 +1,6 @@
 {
   "name": "bravado-server",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Server for the Bravado REST API framework",
   "directories": {
     "lib": "lib"
@@ -26,7 +26,7 @@
     "bravado"
   ],
   "dependencies": {
-    "bravado-core": "^0.6.0",
+    "bravado-core": "^0.7.0",
     "bunyan": "^1.4.0",
     "commander": "^2.8.1",
     "convict": "^1.0.1",
@@ -35,6 +35,7 @@
     "defined": "^1.0.0",
     "dotenv": "^1.2.0",
     "inflection": "^1.7.1",
+    "object-assign": "^4.0.1",
     "q": "^1.4.1",
     "restify": "^4.0.0"
   }
