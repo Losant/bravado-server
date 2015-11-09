@@ -28,6 +28,7 @@
   "dependencies": {
     "bravado-core": "^0.7.0",
     "bunyan": "^1.4.0",
+    "clone": "^1.0.2",
     "commander": "^2.8.1",
     "convict": "^1.0.1",
     "debug": "^2.2.0",
