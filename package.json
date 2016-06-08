@@ -26,7 +26,7 @@
     "bravado"
   ],
   "dependencies": {
-    "bravado-core": "^0.9.0",
+    "bravado-core": "acdaniel/bravado-core#api-def-build",
     "bunyan": "^1.4.0",
     "clone": "^1.0.2",
     "commander": "^2.8.1",
