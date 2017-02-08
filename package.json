@@ -27,17 +27,17 @@
   ],
   "dependencies": {
     "bravado-core": "^0.12.0",
-    "bunyan": "^1.4.0",
+    "bunyan": "^1.8.5",
     "clone": "^2.1.0",
-    "commander": "^2.8.1",
-    "convict": "^1.0.1",
+    "commander": "^2.9.0",
+    "convict": "^2.0.0",
     "debug": "^2.6.0",
     "defaults": "^1.0.3",
     "defined": "^1.0.0",
-    "dotenv": "^1.2.0",
-    "inflection": "^1.7.1",
-    "object-assign": "^4.1.0",
+    "dotenv": "^4.0.0",
+    "inflection": "^1.12.0",
+    "object-assign": "^4.1.1",
     "q": "^1.4.1",
-    "restify": "^4.0.0"
+    "restify": "^4.3.0"
   }
 }
