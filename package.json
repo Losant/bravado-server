@@ -1,6 +1,6 @@
 {
   "name": "bravado-server",
-  "version": "0.15.4",
+  "version": "0.15.5",
   "description": "Server for the Bravado REST API framework",
   "directories": {
     "lib": "lib"
@@ -26,7 +26,7 @@
     "bravado"
   ],
   "dependencies": {
-    "bravado-core": "^0.12.1",
+    "bravado-core": "^0.12.2",
     "bunyan": "^1.8.5",
     "clone": "^2.1.0",
     "commander": "^2.9.0",
