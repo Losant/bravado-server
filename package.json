@@ -9,14 +9,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "main": "lib/index.js",
-  "author": {
-    "name": "Adam Daniel",
-    "email": "adam@acdaniel.com"
+  "author": "Losant <hello@losant.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Losant/bravado-server/issues"
   },
-  "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/acdaniel/bravado-server"
+    "url": "git+https://github.com/Losant/bravado-server.git"
   },
   "keywords": [
     "rest",
