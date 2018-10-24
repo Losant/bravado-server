@@ -310,9 +310,9 @@ braces@^2.3.0, braces@^2.3.1:
     split-string "^3.0.2"
     to-regex "^3.0.1"
 
-"bravado-core@git+https://github.com/Losant/bravado-core.git#develop":
+bravado-core@^0.13.0:
   version "0.13.0"
-  resolved "git+https://github.com/Losant/bravado-core.git#5cc169a6fd108b171011caf03984a1e099cb73f2"
+  resolved "https://registry.yarnpkg.com/bravado-core/-/bravado-core-0.13.0.tgz#95cfaf24d3bda841f263bda24df90897e202ed1b"
   dependencies:
     defaults "^1.0.3"
     error "^7.0.2"
@@ -1981,8 +1981,8 @@ minimist@^1.2.0:
   resolved "http://registry.npmjs.org/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
 
 minipass@^2.2.1, minipass@^2.3.3:
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/minipass/-/minipass-2.3.4.tgz#4768d7605ed6194d6d576169b9e12ef71e9d9957"
+  version "2.3.5"
+  resolved "https://registry.yarnpkg.com/minipass/-/minipass-2.3.5.tgz#cacebe492022497f656b0f0f51e2682a9ed2d848"
   dependencies:
     safe-buffer "^5.1.2"
     yallist "^3.0.0"
