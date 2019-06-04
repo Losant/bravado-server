@@ -310,9 +310,9 @@ braces@^2.3.0, braces@^2.3.1:
     split-string "^3.0.2"
     to-regex "^3.0.1"
 
-bravado-core@^0.13.2:
-  version "0.13.2"
-  resolved "https://registry.yarnpkg.com/bravado-core/-/bravado-core-0.13.2.tgz#1fb3639b4c627920c68649aceb66134794a3a427"
+bravado-core@^0.13.3:
+  version "0.13.3"
+  resolved "https://registry.yarnpkg.com/bravado-core/-/bravado-core-0.13.3.tgz#ad2814aae13e5a28e15960cb39a1c08a2c7b919c"
   dependencies:
     defaults "^1.0.3"
     error "^7.0.2"
