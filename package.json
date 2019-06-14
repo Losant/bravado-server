@@ -37,7 +37,7 @@
     "*.js": "esw"
   },
   "dependencies": {
-    "bravado-core": "^0.13.3",
+    "bravado-core": "^0.13.4",
     "bunyan": "^1.8.12",
     "clone": "^2.1.2",
     "commander": "^2.19.0",
@@ -47,6 +47,7 @@
     "defined": "^1.0.0",
     "dotenv": "^6.1.0",
     "inflection": "^1.12.0",
+    "lodash": "^4.17.11",
     "object-assign": "^4.1.1",
     "q": "^1.5.1",
     "restify": "^4.3.0"
