@@ -310,14 +310,14 @@ braces@^2.3.0, braces@^2.3.1:
     split-string "^3.0.2"
     to-regex "^3.0.1"
 
-bravado-core@^0.13.3:
-  version "0.13.3"
-  resolved "https://registry.yarnpkg.com/bravado-core/-/bravado-core-0.13.3.tgz#ad2814aae13e5a28e15960cb39a1c08a2c7b919c"
+bravado-core@^0.13.4:
+  version "0.13.4"
+  resolved "https://registry.yarnpkg.com/bravado-core/-/bravado-core-0.13.4.tgz#b230211671b70540250f57b322138e3b6e14e999"
   dependencies:
     defaults "^1.0.3"
     error "^7.0.2"
     is-my-json-valid "^2.19.0"
-    js-yaml "^3.12.0"
+    js-yaml "^3.13.1"
     json-refs "^3.0.12"
     jsonwebtoken "^8.3.0"
     lodash "^4.17.11"
@@ -1630,9 +1630,9 @@ jest-validate@^23.5.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
 
-js-yaml@^3.10.0, js-yaml@^3.12.0, js-yaml@^3.9.0:
-  version "3.12.0"
-  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.12.0.tgz#eaed656ec8344f10f527c6bfa1b6e2244de167d1"
+js-yaml@^3.10.0, js-yaml@^3.12.0, js-yaml@^3.13.1, js-yaml@^3.9.0:
+  version "3.13.1"
+  resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.13.1.tgz#aff151b30bfdfa8e49e05da22e7415e9dfa37847"
   dependencies:
     argparse "^1.0.7"
     esprima "^4.0.0"
