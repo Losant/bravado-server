@@ -1,0 +1,63 @@
+---
+x-bravado-controller: testApi.js
+path: /testApi
+auth: []
+params:
+actions:
+  objectId:
+    method: POST
+    path: /objectId
+    summary: Accept and return an objectId
+    auth: []
+    params:
+    - name: id
+      description: 
+      in: query
+      required: true
+      schema: 
+        $ref: '#/definitions/objectId'
+    responses:
+      200:
+        description: Application information
+      400:
+        description: Error if malformed request
+      404:
+        description: Error if application was not found
+  imageData:
+    method: POST
+    path: /imageData
+    summary: Accept and return an objectId
+    auth: []
+    params:
+    - name: id
+      description: 
+      in: query
+      required: true
+      schema: 
+        $ref: '#/definitions/imageDataUri'
+    responses:
+      200:
+        description: Application information
+      400:
+        description: Error if malformed request
+      404:
+        description: Error if application was not found
+  date:
+    method: POST
+    path: /date
+    summary: Accept and return an objectId
+    auth: []
+    params:
+    - name: id
+      description: 
+      in: query
+      required: true
+      schema: 
+        $ref: '#/definitions/date'
+    responses:
+      200:
+        description: Application information
+      400:
+        description: Error if malformed request
+      404:
+        description: Error if application was not found

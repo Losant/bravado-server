@@ -1,0 +1,1 @@
+{ "type": "string", "pattern": "^[A-Fa-f\\d]{24}$" }
