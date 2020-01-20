@@ -7,11 +7,8 @@ actions:
   objectId:
     method: POST
     path: /objectId
-    summary: Accept and return an objectId
-    auth: []
     params:
     - name: id
-      description: 
       in: query
       required: true
       schema: 
@@ -23,18 +20,15 @@ actions:
         description: Error if malformed request
       404:
         description: Error if application was not found
-  imageData:
+  objectIds:
     method: POST
-    path: /imageData
-    summary: Accept and return an objectId
-    auth: []
+    path: /objectIds
     params:
-    - name: id
-      description: 
-      in: query
+    - name: ids
+      in: body
       required: true
       schema: 
-        $ref: '#/definitions/imageDataUri'
+        $ref: '#/definitions/objectIds'
     responses:
       200:
         description: Application information
@@ -45,15 +39,30 @@ actions:
   date:
     method: POST
     path: /date
-    summary: Accept and return an objectId
-    auth: []
     params:
-    - name: id
+    - name: date
       description: 
       in: query
       required: true
       schema: 
         $ref: '#/definitions/date'
+    responses:
+      200:
+        description: Application information
+      400:
+        description: Error if malformed request
+      404:
+        description: Error if application was not found
+  object:
+    method: POST
+    path: /object
+    params:
+    - name: object
+      description: 
+      in: body
+      required: true
+      schema: 
+        $ref: '#/definitions/genericObject'
     responses:
       200:
         description: Application information

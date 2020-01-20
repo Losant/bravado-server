@@ -12,6 +12,8 @@ process.env.NODE_ENV = 'test';
 const apiUrl = `http://${process.env.HOST}:${process.env.PORT}`;
 process.env.API_URL = apiUrl;
 
+const oid = '000000000000000000000000';
+
 describe('Index', async () => {
   let client;
 
@@ -40,10 +42,26 @@ describe('Index', async () => {
     nock.disableNetConnect();
   });
 
-  it('Correctly validate on API schema', async () => {
+  it('Correctly accept an objectId', async () => {
     await client.testApi.objectId({}, {}).should.be.rejectedWith('id is required');
     await client.testApi.objectId({ id: 'badID' }, {}).should.be.rejectedWith('id pattern mismatch');
-    const result = await client.testApi.objectId({ id: '000000000000000000000000' }, {});
-    result.should.deepEqual({ id: '000000000000000000000000' });
+    (await client.testApi.objectId({ id: oid }, {})).should.deepEqual({ id: oid });
+  });
+
+  it('Correctly accept an array', async () => {
+    await client.testApi.objectIds({ ids: ['badId'] }, {}).should.be.rejectedWith('ids.0 pattern mismatch');
+    await client.testApi.objectIds({ ids: [oid, oid, oid, oid] }, {}).should.be.rejectedWith('ids has more items than allowed');
+    (await client.testApi.objectIds({ ids: [oid, oid, oid] }, {})).should.deepEqual({ ids: [oid, oid, oid] });
+  });
+
+  it('Correctly accept datetime format', async () => {
+    await client.testApi.date({ date: '2020' }, {}).should.be.rejectedWith('date must be date-time format');
+    (await client.testApi.date({ date: '2020-01-20T15:19:01Z' }, {})).should.deepEqual({ date: '2020-01-20T15:19:01Z' });
+  });
+
+  it('Correctly accept an object', async () => {
+    await client.testApi.object({ object: { us: 5 } }, {}).should.be.rejectedWith('object has additional properties');
+    (await client.testApi.object({ object: {} }, {})).should.deepEqual({ object: {} });
+    (await client.testApi.object({ object: { you: 'hi', me: 'ho' } }, {})).should.deepEqual({ object: { you: 'hi', me: 'ho' } });
   });
 });

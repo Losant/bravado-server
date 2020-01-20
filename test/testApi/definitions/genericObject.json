@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "properties": {
+      "you": { "type":"string" },
+      "me": { "type":"string" }
+    },
+    "additionalProperties": false
+  }
+  
