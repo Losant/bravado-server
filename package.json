@@ -48,7 +48,9 @@
   },
   "devDependencies": {
     "@losant/eslint-config-losant": "^1.3.10",
-    "bravado-client-generator": "^0.2.0",
+    "bravado-client-generator": "Losant/bravado-client-generator#144bcb1",
+    "es6-promise": "^4.2.8",
+    "eventsource": "^1.0.7",
     "fs-extra": "^8.1.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",

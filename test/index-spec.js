@@ -64,7 +64,7 @@ describe('Index', async () => {
     (await client.testApi.object({ object: { you: 'hi', me: 'ho' } }, {})).should.deepEqual({ object: { you: 'hi', me: 'ho' } });
   });
 
-  it.skip('Correctly accept a file', async () => {
+  it('Correctly accept a file', async () => {
     fs.writeFile(`${__dirname}/testClient/test.txt`, 'Howdy');
     const fileStream = fs.createReadStream(`${__dirname}/testClient/test.txt`);
 

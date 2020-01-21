@@ -1,1 +1,6 @@
-{ "type": "string", "pattern": "^[A-Fa-f\\d]{24}$" }
+{ 
+    "title": "Obj",
+    "description": "Obj",
+    "type": "string", 
+    "pattern": "^[A-Fa-f\\d]{24}$" 
+}

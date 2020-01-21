@@ -1,4 +1,6 @@
 {
+    "title": "Obj",
+    "description": "Obj",
     "type": "object",
     "properties": {
       "you": { "type":"string" },

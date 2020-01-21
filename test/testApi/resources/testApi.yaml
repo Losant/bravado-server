@@ -1,7 +1,6 @@
 ---
 x-bravado-controller: testApi.js
 path: /testApi
-params:
 actions:
   getTest:
     method: GET
@@ -27,6 +26,7 @@ actions:
     params:
     - name: id
       in: query
+      description: hi
       required: true
       schema: 
         $ref: '#/definitions/objectId'
@@ -42,6 +42,7 @@ actions:
     path: /objectIds
     params:
     - name: ids
+      description: hi
       in: body
       required: true
       schema: 
@@ -58,7 +59,7 @@ actions:
     path: /date
     params:
     - name: date
-      description: 
+      description: hi
       in: query
       required: true
       schema: 
@@ -75,6 +76,7 @@ actions:
     path: /object
     params:
     - name: object
+      description: hi
       in: body
       required: true
       schema: 
@@ -93,6 +95,7 @@ actions:
     - name: theFile
       in: multipart
       type: file
+      description: hi
       required: true
     responses:
       200:
