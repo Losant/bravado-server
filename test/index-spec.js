@@ -10,7 +10,6 @@ process.env.PORT = process.env.PORT || '56473';
 process.env.HOST = process.env.HOST || '127.0.0.1';
 process.env.NODE_ENV = 'test';
 const apiUrl = `http://${process.env.HOST}:${process.env.PORT}`;
-process.env.API_URL = apiUrl;
 
 const oid = '000000000000000000000000';
 

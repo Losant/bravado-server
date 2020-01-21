@@ -4,6 +4,24 @@ path: /testApi
 auth: []
 params:
 actions:
+  getTest:
+    method: GET
+    responses:
+      200:
+        description: Application information
+      400:
+        description: Error if malformed request
+      404:
+        description: Error if application was not found
+  postTest:
+    method: POST
+    responses:
+      200:
+        description: Application information
+      400:
+        description: Error if malformed request
+      404:
+        description: Error if application was not found
   objectId:
     method: POST
     path: /objectId
