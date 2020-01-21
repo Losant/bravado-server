@@ -10,5 +10,8 @@ module.exports = {
   },
   object: function(params, context) {
     return context.succeed(params);
+  },
+  upload: function(params, context) {
+    return context.succeed(params);
   }
 };

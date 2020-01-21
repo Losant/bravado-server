@@ -63,4 +63,12 @@ describe('Index', async () => {
     (await client.testApi.object({ object: {} }, {})).should.deepEqual({ object: {} });
     (await client.testApi.object({ object: { you: 'hi', me: 'ho' } }, {})).should.deepEqual({ object: { you: 'hi', me: 'ho' } });
   });
+
+  it.skip('Correctly accept a file', async () => {
+    fs.writeFile(`${__dirname}/testClient/test.txt`, 'Howdy');
+    const fileStream = fs.createReadStream(`${__dirname}/testClient/test.txt`);
+
+    await client.testApi.upload({ theFile: 'howdy' }, {}).should.be.rejectedWith('theFile is not a valid file');
+    await client.testApi.upload({ theFile: fileStream }, {});
+  });
 });

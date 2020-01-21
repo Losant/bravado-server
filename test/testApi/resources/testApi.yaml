@@ -1,7 +1,6 @@
 ---
 x-bravado-controller: testApi.js
 path: /testApi
-auth: []
 params:
 actions:
   getTest:
@@ -76,11 +75,25 @@ actions:
     path: /object
     params:
     - name: object
-      description: 
       in: body
       required: true
       schema: 
         $ref: '#/definitions/genericObject'
+    responses:
+      200:
+        description: Application information
+      400:
+        description: Error if malformed request
+      404:
+        description: Error if application was not found
+  upload:
+    method: POST
+    path: /upload
+    params:
+    - name: theFile
+      in: multipart
+      type: file
+      required: true
     responses:
       200:
         description: Application information
