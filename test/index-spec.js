@@ -1,10 +1,11 @@
 const { start, stop } = require('../lib/index');
-require('should');
-const clientGenerator = require('bravado-client-generator');
+const http = require('http');
 const path = require('path');
-const fs = require('fs-extra');
+const fs   = require('fs-extra');
 const nock = require('nock');
+const clientGenerator = require('bravado-client-generator');
 const testClientPath  = path.join(__dirname, 'testClient');
+require('should');
 
 process.env.PORT = process.env.PORT || '56473';
 process.env.HOST = process.env.HOST || '127.0.0.1';
@@ -41,6 +42,20 @@ describe('Index', async () => {
     nock.disableNetConnect();
   });
 
+  it('Correctly set route options at startup', async () => {
+    const httpClient = http.request(`${apiUrl}/testApi/objectId`, { method: 'OPTIONS' }, (res) => {
+      res.headers.should.deepEqual({
+        'server': 'Test API',
+        'access-control-allow-headers': 'Accept,Content-Type,X-Amz-Date,Authorization,Accept-Version,howdy,partner',
+        'access-control-allow-methods': 'OPTIONS,POST',
+        'access-control-allow-origin': '*',
+        'date': res.headers.date,
+        'connection': 'close'
+      });
+    });
+    httpClient.end();
+  });
+
   it('Correctly accept an objectId', async () => {
     await client.testApi.objectId({}, {}).should.be.rejectedWith('id is required');
     await client.testApi.objectId({ id: 'badID' }, {}).should.be.rejectedWith('id pattern mismatch');
@@ -65,7 +80,7 @@ describe('Index', async () => {
   });
 
   it('Correctly accept a file', async () => {
-    fs.writeFile(`${__dirname}/testClient/test.txt`, 'Howdy');
+    await fs.writeFile(`${__dirname}/testClient/test.txt`, 'Howdy');
     const fileStream = fs.createReadStream(`${__dirname}/testClient/test.txt`);
 
     await client.testApi.upload({ theFile: 'howdy' }, {}).should.be.rejectedWith('theFile is not a valid file');
