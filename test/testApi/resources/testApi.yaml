@@ -1,0 +1,123 @@
+---
+x-bravado-controller: testApi.js
+path: /testApi
+actions:
+  getTest:
+    method: GET
+    responses:
+      200:
+        description: Good
+      400:
+        description: Bad
+      404:
+        description: Where is it?
+  postTest:
+    method: POST
+    responses:
+      200:
+        description: Good
+      400:
+        description: Bad
+      404:
+        description: Where is it?
+  objectId:
+    method: POST
+    path: /objectId
+    params:    
+    - name: howdy
+      in: header
+      description: A test
+    - name: partner
+      in: header
+      description: A test
+    - name: id
+      in: query
+      description: A test
+      required: true
+      schema: 
+        $ref: '#/definitions/objectId'
+    responses:
+      200:
+        description: Good
+      400:
+        description: Bad
+      404:
+        description: Where is it?
+  objectIds:
+    method: POST
+    path: /objectIds
+    params:
+    - name: ids
+      description: A test
+      in: body
+      required: true
+      schema: 
+        $ref: '#/definitions/objectIds'
+    responses:
+      200:
+        description: Good
+      400:
+        description: Bad
+      404:
+        description: Where is it?
+  date:
+    method: POST
+    path: /date
+    params:
+    - name: I
+      description: A test
+      in: header
+      schema: 
+        $ref: '#/definitions/date'
+    - name: date
+      description: A test
+      in: query
+      required: true
+      schema: 
+        $ref: '#/definitions/date'
+    responses:
+      200:
+        description: Good
+      400:
+        description: Bad
+      404:
+        description: Where is it?
+  object:
+    method: POST
+    path: /object
+    params:
+    - name: object
+      description: A test
+      in: body
+      required: true
+      schema: 
+        $ref: '#/definitions/genericObject'
+    - name: have
+      description: A test
+      in: header
+    responses:
+      200:
+        description: Good
+      400:
+        description: Bad
+      404:
+        description: Where is it?
+  upload:
+    method: POST
+    path: /upload
+    params:
+    - name: headers
+      description: A test
+      in: header
+    - name: theFile
+      in: multipart
+      type: file
+      description: A test
+      required: true
+    responses:
+      200:
+        description: Good
+      400:
+        description: Bad
+      404:
+        description: Where is it?

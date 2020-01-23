@@ -1,0 +1,7 @@
+{
+  "title": "Obj",
+  "description": "Obj",
+  "type": "array",
+  "items": { "$ref": "#/definitions/objectId" },
+  "maxItems": 3
+}

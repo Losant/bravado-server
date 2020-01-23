@@ -1,6 +1,6 @@
 {
   "name": "bravado-server",
-  "version": "0.16.6",
+  "version": "0.17.0",
   "description": "Server for the Bravado REST API framework",
   "directories": {
     "lib": "lib"
@@ -11,10 +11,10 @@
     "lint:fix": "yarn lint --fix",
     "lint:watch": "yarn lint --watch",
     "lint:changed": "lint-staged",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/index-spec.js --timeout 15000"
   },
   "engines": {
-    "node": ">=8.3"
+    "node": ">=12.13.0"
   },
   "main": "lib/index.js",
   "author": "Losant <hello@losant.com>",
@@ -39,29 +39,27 @@
   "dependencies": {
     "bravado-core": "^0.13.6",
     "bunyan": "^1.8.12",
-    "clone": "^2.1.2",
     "commander": "^4.0.1",
     "convict": "^5.2.0",
     "debug": "^4.1.1",
-    "defaults": "^1.0.3",
-    "defined": "^1.0.0",
     "dotenv": "^8.2.0",
-    "inflection": "^1.12.0",
-    "lodash": "^4.17.15",
-    "object-assign": "^4.1.1",
-    "q": "^1.5.1",
-    "restify": "^4.3.0"
+    "omnibelt": "^1.3.2",
+    "restify": "^8.5.1"
   },
   "devDependencies": {
     "@losant/eslint-config-losant": "^1.3.10",
+    "bravado-client-generator": "Losant/bravado-client-generator#144bcb1",
+    "es6-promise": "^4.2.8",
+    "eventsource": "^1.0.7",
+    "fs-extra": "^8.1.0",
     "husky": "^3.1.0",
-    "lint-staged": "^9.5.0"
+    "lint-staged": "^9.5.0",
+    "mocha": "^7.0.0",
+    "nock": "^11.7.2",
+    "should": "^13.2.3"
   },
   "eslintConfig": {
-    "extends": "@losant/eslint-config-losant/env/node",
-    "rules": {
-      "guard-for-in": "off"
-    }
+    "extends": "@losant/eslint-config-losant/env/node"
   },
   "husky": {
     "hooks": {

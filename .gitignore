@@ -54,7 +54,6 @@ build/
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
-!.vscode/launch.json
 !.vscode/extensions.json
 
 ### WebStorm/IntelliJ ###
@@ -79,6 +78,9 @@ $RECYCLE.BIN/
 
 # Thumbnails
 ._*
+
+# Generated test files
+test/testClient/
 
 # Files that might appear in the root of a volume
 .DocumentRevisions-V100
