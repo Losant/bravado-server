@@ -6,107 +6,118 @@ actions:
     method: GET
     responses:
       200:
-        description: Application information
+        description: Good
       400:
-        description: Error if malformed request
+        description: Bad
       404:
-        description: Error if application was not found
+        description: Where is it?
   postTest:
     method: POST
     responses:
       200:
-        description: Application information
+        description: Good
       400:
-        description: Error if malformed request
+        description: Bad
       404:
-        description: Error if application was not found
+        description: Where is it?
   objectId:
     method: POST
     path: /objectId
     params:    
     - name: howdy
       in: header
-      description: hi
+      description: A test
     - name: partner
       in: header
-      description: hi
+      description: A test
     - name: id
       in: query
-      description: hi
+      description: A test
       required: true
       schema: 
         $ref: '#/definitions/objectId'
     responses:
       200:
-        description: Application information
+        description: Good
       400:
-        description: Error if malformed request
+        description: Bad
       404:
-        description: Error if application was not found
+        description: Where is it?
   objectIds:
     method: POST
     path: /objectIds
     params:
     - name: ids
-      description: hi
+      description: A test
       in: body
       required: true
       schema: 
         $ref: '#/definitions/objectIds'
     responses:
       200:
-        description: Application information
+        description: Good
       400:
-        description: Error if malformed request
+        description: Bad
       404:
-        description: Error if application was not found
+        description: Where is it?
   date:
     method: POST
     path: /date
     params:
+    - name: I
+      description: A test
+      in: header
+      schema: 
+        $ref: '#/definitions/date'
     - name: date
-      description: hi
+      description: A test
       in: query
       required: true
       schema: 
         $ref: '#/definitions/date'
     responses:
       200:
-        description: Application information
+        description: Good
       400:
-        description: Error if malformed request
+        description: Bad
       404:
-        description: Error if application was not found
+        description: Where is it?
   object:
     method: POST
     path: /object
     params:
     - name: object
-      description: hi
+      description: A test
       in: body
       required: true
       schema: 
         $ref: '#/definitions/genericObject'
+    - name: have
+      description: A test
+      in: header
     responses:
       200:
-        description: Application information
+        description: Good
       400:
-        description: Error if malformed request
+        description: Bad
       404:
-        description: Error if application was not found
+        description: Where is it?
   upload:
     method: POST
     path: /upload
     params:
+    - name: headers
+      description: A test
+      in: header
     - name: theFile
       in: multipart
       type: file
-      description: hi
+      description: A test
       required: true
     responses:
       200:
-        description: Application information
+        description: Good
       400:
-        description: Error if malformed request
+        description: Bad
       404:
-        description: Error if application was not found
+        description: Where is it?

@@ -42,12 +42,12 @@ describe('Index', async () => {
     nock.disableNetConnect();
   });
 
-  it('Correctly set route options at startup', async () => {
-    const httpClient = http.request(`${apiUrl}/testApi/objectId`, { method: 'OPTIONS' }, (res) => {
+  it('Correctly set options for the base route', async () => {
+    const httpClient = http.request(`${apiUrl}/testApi/objectId/`, { method: 'OPTIONS' }, (res) => {
       res.headers.should.deepEqual({
         'server': 'Test API',
-        'access-control-allow-headers': 'Accept,Content-Type,X-Amz-Date,Authorization,Accept-Version,howdy,partner',
-        'access-control-allow-methods': 'OPTIONS,POST',
+        'access-control-allow-headers': 'Accept,Content-Type,X-Amz-Date,Authorization,Accept-Version,guess,what,howdy,partner,I,have,headers',
+        'access-control-allow-methods': 'OPTIONS,GET,PATCH,POST',
         'access-control-allow-origin': '*',
         'date': res.headers.date,
         'connection': 'close'
