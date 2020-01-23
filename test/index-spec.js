@@ -42,7 +42,7 @@ describe('Index', async () => {
     nock.disableNetConnect();
   });
 
-  it('Correctly set options for the base route', async () => {
+  it('Correctly set cors', async () => {
     const httpClient = http.request(`${apiUrl}/testApi/objectId/`, { method: 'OPTIONS' }, (res) => {
       res.headers.should.deepEqual({
         'server': 'Test API',
@@ -54,6 +54,15 @@ describe('Index', async () => {
       });
     });
     httpClient.end();
+    const httpClient2 = http.request(`${apiUrl}/anotherApi`, { method: 'OPTIONS' }, (res) => {
+      res.headers.should.deepEqual({
+        'server': 'Test API',
+        'access-control-allow-origin': '*',
+        'date': res.headers.date,
+        'connection': 'close'
+      });
+    });
+    httpClient2.end();
   });
 
   it('Correctly accept an objectId', async () => {

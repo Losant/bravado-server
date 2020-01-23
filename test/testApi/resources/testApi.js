@@ -13,5 +13,9 @@ module.exports = {
   },
   upload: function(params, context) {
     return context.succeed(params);
+  },
+  optsTest: function(params, context) {
+    context.statusCode = 204;
+    return context.succeed();
   }
 };
