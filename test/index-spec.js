@@ -47,7 +47,7 @@ describe('Index', async () => {
       res.headers.should.deepEqual({
         'server': 'Test API',
         'access-control-allow-headers': 'Accept,Content-Type,X-Amz-Date,Authorization,Accept-Version,guess,what,howdy,partner,I,have,headers',
-        'access-control-allow-methods': 'OPTIONS,GET,PATCH,POST',
+        'access-control-allow-methods': '*',
         'access-control-allow-origin': '*',
         'date': res.headers.date,
         'connection': 'close'
