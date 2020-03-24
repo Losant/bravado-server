@@ -9,7 +9,6 @@ program
   .option('--env <env>', 'File to load ENV variables from')
   .action(function(api, service) {
     if (program.env) {
-      console.log('Loading env vars: %s', service.env);
       dotenv.load({ path: service.env });
     }
     const server = require('../lib/index');

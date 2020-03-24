@@ -30,6 +30,7 @@ actions:
     - name: partner
       in: header
       description: A test
+      private: true
     - name: id
       in: query
       description: A test
@@ -121,3 +122,9 @@ actions:
         description: Bad
       404:
         description: Where is it?
+  explode:
+    method: GET
+    path: /explode
+    responses:
+      200:
+        description: Good

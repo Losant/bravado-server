@@ -17,5 +17,8 @@ module.exports = {
   optsTest: function(params, context) {
     context.statusCode = 204;
     return context.succeed();
+  },
+  explode: function() {
+    throw new Error('Hello There');
   }
 };
