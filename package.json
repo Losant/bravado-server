@@ -1,6 +1,6 @@
 {
   "name": "bravado-server",
-  "version": "0.17.1",
+  "version": "0.17.2",
   "description": "Server for the Bravado REST API framework",
   "directories": {
     "lib": "lib"
@@ -39,28 +39,31 @@
   "dependencies": {
     "bravado-core": "^0.13.6",
     "bunyan": "^1.8.12",
-    "commander": "^4.0.1",
+    "commander": "^5.0.0",
     "convict": "^5.2.0",
     "debug": "^4.1.1",
     "dotenv": "^8.2.0",
-    "omnibelt": "^1.3.2",
+    "omnibelt": "^1.3.3",
     "restify": "^8.5.1"
   },
   "devDependencies": {
-    "@losant/eslint-config-losant": "^1.3.10",
-    "bravado-client-generator": "Losant/bravado-client-generator#144bcb1",
+    "@losant/eslint-config-losant": "^1.3.11",
+    "bravado-client-generator": "Losant/bravado-client-generator#master",
     "es6-promise": "^4.2.8",
     "eventsource": "^1.0.7",
-    "fs-extra": "^8.1.0",
-    "husky": "^3.1.0",
-    "lint-staged": "^9.5.0",
-    "mocha": "^7.0.0",
-    "nock": "^11.7.2",
+    "fs-extra": "^9.0.0",
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.9",
+    "mocha": "^7.1.1",
+    "nock": "^12.0.3",
     "should": "^13.2.3"
   },
   "eslintConfig": {
     "extends": "@losant/eslint-config-losant/env/node"
   },
+  "eslintIgnore": [
+    "test/testClient"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
