@@ -4,17 +4,17 @@ const dotenv = require('dotenv');
 
 program
   .usage('<api>')
-  .option('-h, --host <host>', 'Host for server to listen on', '')
+  .option('-h, --host <host>', 'Host for server to listen on', '127.0.0.1')
   .option('-p, --port <port>', 'Port for server to listen on', 8081)
   .option('--env <env>', 'File to load ENV variables from')
-  .action(function(api, service) {
+  .action(function(api) {
     if (program.env) {
-      dotenv.load({ path: service.env });
+      dotenv.config({ path: api.env });
     }
     const server = require('../lib/index');
     server.start(api, {
-      host: service.host,
-      port: service.port
+      host: api.host,
+      port: api.port
     });
   })
   .parse(process.argv);
