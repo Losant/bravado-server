@@ -38,24 +38,24 @@
   },
   "dependencies": {
     "bravado-core": "^0.13.6",
-    "bunyan": "^1.8.14",
+    "bunyan": "^1.8.15",
     "commander": "^6.2.0",
-    "convict": "^6.0.0",
-    "debug": "^4.1.1",
+    "convict": "^6.2.3",
+    "debug": "^4.3.4",
     "dotenv": "^8.2.0",
-    "omnibelt": "^2.0.1",
-    "restify": "^8.5.1"
+    "omnibelt": "^2.1.0",
+    "restify": "^10.0.0"
   },
   "devDependencies": {
-    "@losant/eslint-config-losant": "^1.4.0",
+    "@losant/eslint-config-losant": "^1.5.0",
     "bravado-client-generator": "Losant/bravado-client-generator#master",
     "es6-promise": "^4.2.8",
     "eventsource": "^1.0.7",
-    "fs-extra": "^9.0.1",
-    "husky": "^4.3.0",
-    "lint-staged": "^10.5.1",
-    "mocha": "^8.2.1",
-    "nock": "^13.0.4",
+    "fs-extra": "^11.1.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
+    "mocha": "^10.1.0",
+    "nock": "^13.2.9",
     "should": "^13.2.3"
   },
   "eslintConfig": {
