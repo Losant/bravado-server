@@ -1369,16 +1369,16 @@ bravado-client-generator@Losant/bravado-client-generator#master:
 
 bravado-core@Losant/bravado-core#upgrade-deps:
   version "0.14.0"
-  resolved "https://codeload.github.com/Losant/bravado-core/tar.gz/4d6caca70b1e0bf11fe5954960a6c4bc82ed632d"
+  resolved "https://codeload.github.com/Losant/bravado-core/tar.gz/fb9a40321467ee26d639e8eabd3f70d89ba2cbc9"
   dependencies:
     defaults "^1.0.4"
     error "^7.2.1"
     fs-extra "^11.1.0"
-    is-my-json-valid "^2.20.0"
-    js-yaml "^3.13.1"
-    json-refs "^3.0.13"
+    is-my-json-valid "^2.20.6"
+    js-yaml "^3.14.1"
+    json-refs "^3.0.15"
     jsonwebtoken "^8.5.1"
-    lodash "^4.17.15"
+    lodash "^4.17.21"
     node-dir "^0.1.17"
     object-assign "^4.1.1"
     traverse "^0.6.7"
@@ -2742,7 +2742,7 @@ is-my-ip-valid@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-my-ip-valid/-/is-my-ip-valid-1.0.1.tgz#f7220d1146257c98672e6fba097a9f3f2d348442"
   integrity sha512-jxc8cBcOWbNK2i2aTkCZP6i7wkHF1bqKFrwEHuN5Jtg5BSaZHUZQ/JTOJwoV41YvHnOaRyWWh72T/KvfNz9DJg==
 
-is-my-json-valid@^2.20.0:
+is-my-json-valid@^2.20.6:
   version "2.20.6"
   resolved "https://registry.yarnpkg.com/is-my-json-valid/-/is-my-json-valid-2.20.6.tgz#a9d89e56a36493c77bda1440d69ae0dc46a08387"
   integrity sha512-1JQwulVNjx8UqkPE/bqDaxtH4PXCe/2VRh/y3p99heOV87HG4Id5/VfDswd+YiAfHcRTfDlWgISycnHuhZq1aw==
@@ -2873,7 +2873,7 @@ js-yaml@4.1.0, js-yaml@^4.1.0:
   dependencies:
     argparse "^2.0.1"
 
-js-yaml@^3.13.1:
+js-yaml@^3.13.1, js-yaml@^3.14.1:
   version "3.14.1"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.14.1.tgz#dae812fdb3825fa306609a8717383c50c36a0537"
   integrity sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==
@@ -2896,7 +2896,7 @@ jsesc@~0.5.0:
   resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-0.5.0.tgz#e7dee66e35d6fc16f710fe91d5cf69f70f08911d"
   integrity sha512-uZz5UnB7u4T9LvwmFqXii7pZSouaRPorGs5who1Ip7VO0wxanFvBL7GkM6dTHlgX+jhBApRetaWpnDabOeTcnA==
 
-json-refs@^3.0.13, json-refs@^3.0.15:
+json-refs@^3.0.15:
   version "3.0.15"
   resolved "https://registry.yarnpkg.com/json-refs/-/json-refs-3.0.15.tgz#1089f4acf263a3152c790479485195cd6449e855"
   integrity sha512-0vOQd9eLNBL18EGl5yYaO44GhixmImes2wiYn9Z3sag3QnehWrYWlB9AFtMxCL2Bj3fyxgDYkxGFEU/chlYssw==
