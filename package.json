@@ -14,7 +14,7 @@
     "test": "mocha test/index-spec.js --timeout 15000"
   },
   "engines": {
-    "node": ">=12.13.0"
+    "node": ">=16"
   },
   "main": "lib/index.js",
   "author": "Losant <hello@losant.com>",
