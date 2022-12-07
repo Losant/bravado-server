@@ -1369,7 +1369,7 @@ bravado-client-generator@Losant/bravado-client-generator#master:
 
 bravado-core@Losant/bravado-core#upgrade-deps:
   version "0.14.0"
-  resolved "https://codeload.github.com/Losant/bravado-core/tar.gz/c8b3563ab4dbd6aec96dfd81d1e190afd3fccdeb"
+  resolved "https://codeload.github.com/Losant/bravado-core/tar.gz/0edb47f00357b5aa4b53d78c5ba22f263769b108"
   dependencies:
     defaults "^1.0.4"
     error "^7.2.1"
