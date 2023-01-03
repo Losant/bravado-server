@@ -53,9 +53,9 @@
     "es6-promise": "^4.2.8",
     "eventsource": "^2.0.2",
     "fs-extra": "^11.1.0",
-    "husky": "^8.0.2",
+    "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
-    "mocha": "^10.1.0",
+    "mocha": "^10.2.0",
     "nock": "^13.2.9",
     "should": "^13.2.3"
   },
