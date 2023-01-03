@@ -1,10 +1,11 @@
 {
   "name": "bravado-server",
-  "version": "0.18.0",
+  "version": "1.0.0",
   "description": "Server for the Bravado REST API framework",
   "directories": {
     "lib": "lib"
   },
+  "type": "module",
   "scripts": {
     "reinstall": "rm -rf node_modules && yarn install",
     "lint": "esw . --ext .js",
@@ -59,7 +60,24 @@
     "should": "^13.2.3"
   },
   "eslintConfig": {
-    "extends": "@losant/eslint-config-losant/env/node"
+    "extends": "@losant/eslint-config-losant/env/node",
+    "parserOptions": {
+      "sourceType": "module",
+      "parser": "espree"
+    },
+    "overrides": [
+      {
+        "files": [
+          "**.js"
+        ],
+        "rules": {
+          "import/extensions": "off",
+          "node/no-unsupported-features/es-syntax": "off",
+          "import/default": "off",
+          "import/named": "off"
+        }
+      }
+    ]
   },
   "eslintIgnore": [
     "test/testClient"
