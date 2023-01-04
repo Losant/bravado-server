@@ -48,7 +48,7 @@
     "restify": "^10.0.0"
   },
   "devDependencies": {
-    "@losant/eslint-config-losant": "^1.5.0",
+    "@losant/eslint-config-losant": "Losant/eslint-config-losant#add-esm",
     "bravado-client-generator": "Losant/bravado-client-generator#master",
     "es6-promise": "^4.2.8",
     "eventsource": "^2.0.2",
@@ -60,24 +60,7 @@
     "should": "^13.2.3"
   },
   "eslintConfig": {
-    "extends": "@losant/eslint-config-losant/env/node",
-    "parserOptions": {
-      "sourceType": "module",
-      "parser": "espree"
-    },
-    "overrides": [
-      {
-        "files": [
-          "**.js"
-        ],
-        "rules": {
-          "import/extensions": "off",
-          "node/no-unsupported-features/es-syntax": "off",
-          "import/default": "off",
-          "import/named": "off"
-        }
-      }
-    ]
+    "extends": "@losant/eslint-config-losant/env/esm"
   },
   "eslintIgnore": [
     "test/testClient"
