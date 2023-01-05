@@ -48,7 +48,7 @@
     "restify": "^10.0.0"
   },
   "devDependencies": {
-    "@losant/eslint-config-losant": "Losant/eslint-config-losant#add-esm",
+    "@losant/eslint-config-losant": "^1.6.0",
     "bravado-client-generator": "Losant/bravado-client-generator#master",
     "es6-promise": "^4.2.8",
     "eventsource": "^2.0.2",
