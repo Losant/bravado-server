@@ -7,7 +7,7 @@ import * as url from 'url';
 import clientGenerator from 'bravado-client-generator';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const testClientPath  = path.join(__dirname, 'testClient');
-import should from 'should'; // eslint-disable-line no-unused-vars
+import 'should';
 
 process.env.PORT = process.env.PORT || '56473';
 process.env.HOST = process.env.HOST || '127.0.0.1';
