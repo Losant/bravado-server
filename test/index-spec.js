@@ -1,11 +1,13 @@
-const { start, stop } = require('../lib/index');
-const http = require('http');
-const path = require('path');
-const fs   = require('fs-extra');
-const nock = require('nock');
-const clientGenerator = require('bravado-client-generator');
+import { start, stop } from '../lib/index.js';
+import http from 'http';
+import path from 'path';
+import fs from 'fs-extra';
+import nock from 'nock';
+import * as url from 'url';
+import clientGenerator from 'bravado-client-generator';
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const testClientPath  = path.join(__dirname, 'testClient');
-require('should');
+import 'should';
 
 process.env.PORT = process.env.PORT || '56473';
 process.env.HOST = process.env.HOST || '127.0.0.1';
@@ -41,7 +43,7 @@ describe('Index', async () => {
       lang: 'js',
       output: testClientPath
     });
-    client = await require(testClientPath).createClient({ url: apiUrl });
+    client = (await import(path.join(testClientPath, 'lib/index.js'))).createClient({ url: apiUrl });
   });
 
   after(() => {

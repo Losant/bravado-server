@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   objectId: function(params, context) {
     return context.succeed(params);
   },
