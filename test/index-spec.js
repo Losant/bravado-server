@@ -27,6 +27,7 @@ describe('Index', async () => {
       name: 'Test API',
       port: process.env.PORT,
       host: process.env.HOST,
+      maxParamLength: 250,
       errorTransform: (err) => {
         if (err.statusCode) {
           return { code: err.statusCode, body: { type: err.type, message: err.message } };
