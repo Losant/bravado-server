@@ -1,6 +1,6 @@
 {
   "name": "bravado-server",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Server for the Bravado REST API framework",
   "directories": {
     "lib": "lib"
@@ -40,21 +40,21 @@
   "dependencies": {
     "bravado-core": "^0.14.0",
     "bunyan": "^1.8.15",
-    "commander": "^9.4.1",
+    "commander": "^10.0.1",
     "convict": "^6.2.3",
     "debug": "^4.3.4",
     "dotenv": "^16.0.3",
-    "omnibelt": "^2.1.0",
-    "restify": "^10.0.0"
+    "omnibelt": "Losant/omnibelt#upgrade-ramda",
+    "restify": "^11.1.0"
   },
   "devDependencies": {
-    "@losant/eslint-config-losant": "^1.6.0",
+    "@losant/eslint-config-losant": "^1.6.1",
     "bravado-client-generator": "Losant/bravado-client-generator#master",
     "es6-promise": "^4.2.8",
     "eventsource": "^2.0.2",
-    "fs-extra": "^11.1.0",
+    "fs-extra": "^11.1.1",
     "husky": "^8.0.3",
-    "lint-staged": "^13.1.0",
+    "lint-staged": "^13.2.1",
     "mocha": "^10.2.0",
     "nock": "^13.2.9",
     "should": "^13.2.3"
