@@ -44,7 +44,7 @@
     "convict": "^6.2.3",
     "debug": "^4.3.4",
     "dotenv": "^16.0.3",
-    "omnibelt": "Losant/omnibelt#upgrade-ramda",
+    "omnibelt": "^3.0.1",
     "restify": "^11.1.0"
   },
   "devDependencies": {
