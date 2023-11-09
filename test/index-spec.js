@@ -114,13 +114,13 @@ describe('Index', async () => {
   });
 
   it('Correctly accept a file', async () => {
-    await fs.writeFile(`${__dirname}/testClient/test.txt`, 'Howdy');
-    const fileStream = fs.createReadStream(`${__dirname}/testClient/test.txt`);
+    await client.testApi.upload({ theFile: 'words' }, {}).should.be.resolvedWith({ content: 'words' });
 
-    await client.testApi.upload({ theFile: 'howdy' }, {}).should.be.rejectedWith({
-      statusCode: 400, type: 'Validation', message: 'theFile is not a valid file'
-    });
-    await client.testApi.upload({ theFile: fileStream }, {});
+    const localPath = `${__dirname}/testClient/test.txt`;
+    await fs.writeFile(localPath, 'Howdy');
+    const fileStream = fs.createReadStream(localPath);
+    await client.testApi.upload({ theFile: fileStream }, {}).should.be.resolvedWith({ content: 'Howdy' });
+    await fs.remove(localPath);
   });
 
   it('correctly transforms error result', async () => {
