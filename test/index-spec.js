@@ -60,7 +60,8 @@ describe('Index', async () => {
         'access-control-allow-methods': 'DELETE,GET,HEAD,OPTIONS,PATCH,POST,PUT',
         'access-control-allow-origin': '*',
         'date': res.headers.date,
-        'connection': 'close'
+        'connection': 'keep-alive',
+        'keep-alive': 'timeout=5'
       });
     });
     httpClient.end();
@@ -69,7 +70,8 @@ describe('Index', async () => {
         'server': 'Test API',
         'access-control-allow-origin': '*',
         'date': res.headers.date,
-        'connection': 'close'
+        'connection': 'keep-alive',
+        'keep-alive': 'timeout=5'
       });
     });
     httpClient2.end();
