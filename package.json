@@ -41,11 +41,11 @@
   "dependencies": {
     "bravado-core": "^0.15.0",
     "bunyan": "^1.8.15",
-    "commander": "^12.0.0",
-    "convict": "^6.2.4",
-    "debug": "^4.3.4",
+    "commander": "^12.1.0",
+    "convict": "^6.2.3",
+    "debug": "^4.3.6",
     "dotenv": "^16.4.5",
-    "omnibelt": "^3.1.2",
+    "omnibelt": "Losant/omnibelt#SP-13326",
     "restify": "^11.1.0"
   },
   "devDependencies": {
@@ -55,9 +55,9 @@
     "eventsource": "^2.0.2",
     "fs-extra": "^11.2.0",
     "husky": "^9.0.11",
-    "lint-staged": "^15.2.2",
-    "mocha": "^10.3.0",
-    "nock": "^13.5.4",
+    "lint-staged": "^15.2.9",
+    "mocha": "^10.7.3",
+    "nock": "^13.5.5",
     "should": "^13.2.3"
   },
   "eslintConfig": {
