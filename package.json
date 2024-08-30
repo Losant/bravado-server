@@ -1,6 +1,6 @@
 {
   "name": "bravado-server",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Server for the Bravado REST API framework",
   "directories": {
     "lib": "lib"
