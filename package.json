@@ -44,7 +44,7 @@
     "convict": "^6.2.3",
     "debug": "^4.3.6",
     "dotenv": "^16.4.5",
-    "omnibelt": "Losant/omnibelt#SP-13326",
+    "omnibelt": "^4.0.0",
     "restify": "^11.1.0"
   },
   "devDependencies": {
