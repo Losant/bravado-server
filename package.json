@@ -38,7 +38,7 @@
     "*.js": "esw"
   },
   "dependencies": {
-    "bravado-core": "^0.15.0",
+    "bravado-core": "Losant/bravado-core#SP-13729",
     "bunyan": "^1.8.15",
     "commander": "^12.1.0",
     "convict": "^6.2.3",
