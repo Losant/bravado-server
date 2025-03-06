@@ -1496,7 +1496,7 @@ bravado-client-generator@Losant/bravado-client-generator#master:
 
 bravado-core@Losant/bravado-core#SP-13729:
   version "0.15.1"
-  resolved "https://codeload.github.com/Losant/bravado-core/tar.gz/c79ef038df7ea5a967df54c1b00b18c1fbcc2f6b"
+  resolved "https://codeload.github.com/Losant/bravado-core/tar.gz/82dbaf135fbb081be86a585bb7bab14665a09f2a"
   dependencies:
     error "^7.2.1"
     fast-jwt "^5.0.5"
