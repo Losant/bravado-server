@@ -8,9 +8,8 @@
   "type": "module",
   "scripts": {
     "reinstall": "rm -rf node_modules && yarn install",
-    "lint": "esw . --ext .js",
+    "lint": "eslint .",
     "lint:fix": "yarn lint --fix",
-    "lint:watch": "yarn lint --watch",
     "lint:changed": "lint-staged",
     "test": "JWT_ALGO=HS256 JWT_SECRET='ssshhh' mocha test/index-spec.js --timeout 15000"
   },
@@ -35,28 +34,28 @@
     "bravado"
   ],
   "lint-staged": {
-    "*.js": "esw"
+    "*.js": "eslint"
   },
   "dependencies": {
     "bravado-core": "Losant/bravado-core#SP-13729",
     "bunyan": "^1.8.15",
-    "commander": "^12.1.0",
+    "commander": "^13.1.0",
     "convict": "^6.2.3",
-    "debug": "^4.3.6",
-    "dotenv": "^16.4.5",
+    "debug": "^4.4.0",
+    "dotenv": "^16.4.7",
     "omnibelt": "^4.0.0",
     "restify": "^11.1.0"
   },
   "devDependencies": {
-    "@losant/eslint-config-losant": "^1.6.1",
+    "@losant/eslint-config-losant": "^2.0.1",
     "bravado-client-generator": "Losant/bravado-client-generator#master",
     "es6-promise": "^4.2.8",
-    "eventsource": "^2.0.2",
-    "fs-extra": "^11.2.0",
-    "husky": "^9.0.11",
-    "lint-staged": "^15.2.9",
-    "mocha": "^10.7.3",
-    "nock": "^13.5.5",
+    "eventsource": "^3.0.5",
+    "fs-extra": "^11.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "mocha": "^11.1.0",
+    "nock": "^14.0.1",
     "should": "^13.2.3"
   },
   "eslintConfig": {
