@@ -12,6 +12,7 @@ import 'should';
 process.env.PORT = process.env.PORT || '56473';
 process.env.HOST = process.env.HOST || '127.0.0.1';
 process.env.NODE_ENV = 'test';
+process.env.JWT_ALGO = process.env.JWT_ALGO || 'HS256';
 const apiUrl = `http://${process.env.HOST}:${process.env.PORT}`;
 
 const oid = '000000000000000000000000';
@@ -53,15 +54,16 @@ describe('Index', async () => {
   });
 
   it('Correctly set cors', async () => {
-    const httpClient = http.request(`${apiUrl}/testApi/objectId/`, { method: 'OPTIONS' }, (res) => {
+    const httpClient = http.request(`${apiUrl}/testApi/objectId/`, { method: 'OPTIONS', headers: { origin: 'foo.com' } }, (res) => {
       res.headers.should.deepEqual({
         'server': 'Test API',
-        'access-control-allow-headers': 'Accept,Content-Type,X-Amz-Date,Authorization,Accept-Version,guess,what,howdy,I,have,headers',
+        'access-control-allow-headers': 'Accept,Content-Type,X-Amz-Date,Authorization,Accept-Version,Vary,guess,what,howdy,I,have,headers',
         'access-control-allow-methods': 'DELETE,GET,HEAD,OPTIONS,PATCH,POST,PUT',
-        'access-control-allow-origin': '*',
+        'access-control-allow-origin': 'foo.com',
         'date': res.headers.date,
         'connection': 'keep-alive',
-        'keep-alive': 'timeout=5'
+        'keep-alive': 'timeout=5',
+        'vary': 'origin'
       });
     });
     httpClient.end();
@@ -71,7 +73,8 @@ describe('Index', async () => {
         'access-control-allow-origin': '*',
         'date': res.headers.date,
         'connection': 'keep-alive',
-        'keep-alive': 'timeout=5'
+        'keep-alive': 'timeout=5',
+        'vary': 'origin'
       });
     });
     httpClient2.end();
