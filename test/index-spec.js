@@ -5,6 +5,7 @@ import fs from 'fs-extra';
 import nock from 'nock';
 import * as url from 'url';
 import clientGenerator from 'bravado-client-generator';
+import { defer } from 'omnibelt';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const testClientPath  = path.join(__dirname, 'testClient');
 import 'should';
@@ -54,30 +55,35 @@ describe('Index', async () => {
   });
 
   it('Correctly set cors', async () => {
+    const waitToClose = defer();
     const httpClient = http.request(`${apiUrl}/testApi/objectId/`, { method: 'OPTIONS', headers: { origin: 'foo.com' } }, (res) => {
-      res.headers.should.deepEqual({
-        'server': 'Test API',
-        'access-control-allow-headers': 'Accept,Content-Type,X-Amz-Date,Authorization,Accept-Version,Vary,guess,what,howdy,I,have,headers',
-        'access-control-allow-methods': 'DELETE,GET,HEAD,OPTIONS,PATCH,POST,PUT',
-        'access-control-allow-origin': 'foo.com',
-        'date': res.headers.date,
-        'connection': 'keep-alive',
-        'keep-alive': 'timeout=5',
-        'vary': 'origin'
-      });
+      waitToClose.resolve(res.headers);
     });
     httpClient.end();
+    const resHeaders = await waitToClose.promise;
+    const waitToClose2 = defer();
     const httpClient2 = http.request(`${apiUrl}/anotherApi`, { method: 'OPTIONS' }, (res) => {
-      res.headers.should.deepEqual({
-        'server': 'Test API',
-        'access-control-allow-origin': '*',
-        'date': res.headers.date,
-        'connection': 'keep-alive',
-        'keep-alive': 'timeout=5',
-        'vary': 'origin'
-      });
+      waitToClose2.resolve(res.headers);
     });
     httpClient2.end();
+    const resHeaders2 = await waitToClose2.promise;
+    resHeaders.should.deepEqual({
+      'server': 'Test API',
+      'access-control-allow-headers': 'Accept,Content-Type,X-Amz-Date,Authorization,Accept-Version,guess,what,howdy,I,have,headers',
+      'access-control-allow-methods': 'DELETE,GET,HEAD,OPTIONS,PATCH,POST,PUT',
+      'access-control-allow-origin': 'foo.com',
+      'date': resHeaders.date,
+      'connection': 'close',
+      'vary': 'origin',
+      'access-control-max-age': '86400'
+    });
+    resHeaders2.should.deepEqual({
+      'server': 'Test API',
+      'access-control-allow-origin': '*',
+      'date': resHeaders2.date,
+      'connection': 'close',
+      'vary': 'origin'
+    });
   });
 
   it('Correctly accept an objectId', async () => {
