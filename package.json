@@ -37,7 +37,7 @@
     "*.js": "eslint"
   },
   "dependencies": {
-    "bravado-core": "Losant/bravado-core#SP-13729",
+    "bravado-core": "^0.16.0",
     "bunyan": "^1.8.15",
     "commander": "^13.1.0",
     "convict": "^6.2.3",
