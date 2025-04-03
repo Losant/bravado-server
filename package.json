@@ -1,6 +1,6 @@
 {
   "name": "bravado-server",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Server for the Bravado REST API framework",
   "directories": {
     "lib": "lib"
@@ -37,7 +37,7 @@
     "*.js": "eslint"
   },
   "dependencies": {
-    "bravado-core": "^0.16.0",
+    "bravado-core": "Losant/bravado-core#SP-13859",
     "bunyan": "^1.8.15",
     "commander": "^13.1.0",
     "convict": "^6.2.3",
@@ -50,12 +50,12 @@
     "@losant/eslint-config-losant": "^2.0.1",
     "bravado-client-generator": "Losant/bravado-client-generator#master",
     "es6-promise": "^4.2.8",
-    "eventsource": "^3.0.5",
+    "eventsource": "^3.0.6",
     "fs-extra": "^11.3.0",
     "husky": "^9.1.7",
-    "lint-staged": "^15.4.3",
+    "lint-staged": "^15.5.0",
     "mocha": "^11.1.0",
-    "nock": "^14.0.1",
+    "nock": "^14.0.2",
     "should": "^13.2.3"
   },
   "eslintConfig": {
