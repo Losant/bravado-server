@@ -504,9 +504,10 @@ bravado-client-generator@Losant/bravado-client-generator#master:
     qs "^6.12.1"
     uri-template "^2.0.0"
 
-bravado-core@Losant/bravado-core#SP-13859:
+bravado-core@^0.16.1:
   version "0.16.1"
-  resolved "https://codeload.github.com/Losant/bravado-core/tar.gz/cc0c42c87f3688d6a6de83af9ca37440a3cb2dd0"
+  resolved "https://registry.yarnpkg.com/bravado-core/-/bravado-core-0.16.1.tgz#ae765be14843a9bcfd12ec97b4274ad5ce7a4c87"
+  integrity sha512-O9OGTFGMljDeC6Kh0/rUNZcBBEwEF+eCl2X7NKCiN6WvlNFs6Xnp950S0dtUvJA3UZSdriwgeLpjqiYhV3fQRA==
   dependencies:
     error "^7.2.1"
     fast-jwt "^6.0.1"
