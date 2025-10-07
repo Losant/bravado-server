@@ -128,3 +128,9 @@ actions:
     responses:
       200:
         description: Good
+  redirect:
+    method: GET
+    path: /redirect
+    responses:
+      302:
+        description: yup

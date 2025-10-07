@@ -139,4 +139,9 @@ describe('Index', async () => {
       statusCode: 505, type: 'TransformedError', message: 'TransformedHello There'
     });
   });
+
+  it('correctly redirect', async () => {
+    nock('https://example.com:443').get('/').reply(200, 'hello');
+    await client.testApi.redirect().should.be.resolvedWith('hello');
+  });
 });

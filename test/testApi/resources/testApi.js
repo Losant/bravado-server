@@ -23,5 +23,8 @@ export default {
   },
   explode: function() {
     throw new Error('Hello There');
+  },
+  redirect: function(params, context) {
+    return context.succeed(new URL('https://example.com'));
   }
 };
