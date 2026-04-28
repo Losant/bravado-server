@@ -6,6 +6,9 @@ import nock from 'nock';
 import * as url from 'url';
 import clientGenerator from 'bravado-client-generator';
 import { defer } from 'omnibelt';
+import { promisify } from 'node:util';
+import { exec } from 'node:child_process';
+const execP = promisify(exec);
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const testClientPath  = path.join(__dirname, 'testClient');
 import 'should';
@@ -46,6 +49,7 @@ describe('Index', async () => {
       lang: 'js',
       output: testClientPath
     });
+    await execP('pnpm install', { cwd: testClientPath });
     client = (await import(path.join(testClientPath, 'lib/index.js'))).createClient({ url: apiUrl });
   });
 
