@@ -16,7 +16,7 @@
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "pnpm@10.29.3",
+  "packageManager": "pnpm@10.33.2",
   "main": "lib/index.js",
   "author": "Losant <hello@losant.com>",
   "license": "MIT",
@@ -38,7 +38,7 @@
     "*.js": "eslint"
   },
   "dependencies": {
-    "bravado-core": "github:Losant/bravado-core#SP-14896",
+    "bravado-core": "^0.17.0",
     "bunyan": "^1.8.15",
     "commander": "^14.0.3",
     "convict": "^6.2.5",
