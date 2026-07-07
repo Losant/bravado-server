@@ -51,7 +51,7 @@ describe('Index', async () => {
       lang: 'js',
       output: testClientPath
     });
-    await execP('pnpm install', { cwd: testClientPath });
+    await execP('pnpm install --ignore-workspace', { cwd: testClientPath });
     client = (await import(path.join(testClientPath, 'lib/index.js'))).createClient({ url: apiUrl });
   });
 
