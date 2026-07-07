@@ -1,0 +1,29 @@
+{
+  "title": "Shape",
+  "description": "A discriminated shape",
+  "type": "object",
+  "discriminator": { "propertyName": "type" },
+  "oneOf": [
+    {
+      "title": "Circle",
+      "type": "object",
+      "properties": {
+        "type": { "type": "string", "enum": ["circle"] },
+        "radius": { "type": "number" }
+      },
+      "required": ["type", "radius"],
+      "additionalProperties": false
+    },
+    {
+      "title": "Rectangle",
+      "type": "object",
+      "properties": {
+        "type": { "type": "string", "enum": ["rectangle"] },
+        "width": { "type": "number" },
+        "height": { "type": "number" }
+      },
+      "required": ["type", "width", "height"],
+      "additionalProperties": false
+    }
+  ]
+}

@@ -122,6 +122,36 @@ actions:
         description: Bad
       404:
         description: Where is it?
+  queryFilter:
+    method: POST
+    path: /queryFilter
+    params:
+    - name: query
+      description: A recursive query filter
+      in: body
+      required: true
+      schema:
+        $ref: '#/definitions/queryFilter'
+    responses:
+      200:
+        description: Good
+      400:
+        description: Bad
+  shape:
+    method: POST
+    path: /shape
+    params:
+    - name: shape
+      description: A discriminated shape
+      in: body
+      required: true
+      schema:
+        $ref: '#/definitions/shape'
+    responses:
+      200:
+        description: Good
+      400:
+        description: Bad
   explode:
     method: GET
     path: /explode

@@ -38,7 +38,7 @@
     "*.js": "eslint"
   },
   "dependencies": {
-    "bravado-core": "^0.18.0",
+    "bravado-core": "github:Losant/bravado-core#SP-15015",
     "bunyan": "^1.8.15",
     "commander": "^14.0.3",
     "convict": "^6.2.5",
@@ -67,7 +67,8 @@
   ],
   "pnpm": {
     "overrides": {
-      "http-deceiver@^1.2.7": "npm:http-deceiver-fixes@^1.2.8"
+      "http-deceiver@^1.2.7": "npm:http-deceiver-fixes@^1.2.8",
+      "bravado-core": "link:../bravado-core"
     }
   }
 }
