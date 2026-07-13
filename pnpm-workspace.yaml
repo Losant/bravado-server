@@ -5,4 +5,4 @@ allowBuilds:
   dtrace-provider: true
 
 minimumReleaseAgeExclude:
-  - bravado-core@0.19.0
+  - bravado-core
