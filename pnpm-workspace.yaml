@@ -1,0 +1,8 @@
+overrides:
+  "http-deceiver@^1.2.7": "npm:http-deceiver-fixes@^1.2.8"
+
+allowBuilds:
+  dtrace-provider: true
+
+minimumReleaseAgeExclude:
+  - bravado-core

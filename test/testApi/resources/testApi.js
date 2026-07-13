@@ -21,6 +21,12 @@ export default {
     context.statusCode = 204;
     return context.succeed();
   },
+  queryFilter: function(params, context) {
+    return context.succeed(params);
+  },
+  shape: function(params, context) {
+    return context.succeed(params);
+  },
   explode: function() {
     throw new Error('Hello There');
   }

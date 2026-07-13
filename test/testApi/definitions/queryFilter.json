@@ -1,0 +1,12 @@
+{
+  "title": "Query Filter",
+  "description": "A recursive query filter",
+  "type": "object",
+  "properties": {
+    "field": { "type": "string" },
+    "op": { "type": "string", "enum": ["eq", "ne", "gt", "lt"] },
+    "$and": { "type": "array", "items": { "$ref": "#/definitions/queryFilter" } },
+    "$or":  { "type": "array", "items": { "$ref": "#/definitions/queryFilter" } }
+  },
+  "additionalProperties": false
+}

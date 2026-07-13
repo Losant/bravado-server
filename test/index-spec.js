@@ -35,7 +35,9 @@ describe('Index', async () => {
       maxParamLength: 250,
       errorTransform: (err) => {
         if (err.statusCode) {
-          return { code: err.statusCode, body: { type: err.type, message: err.message } };
+          const body = { type: err.type, message: err.message };
+          if (err.validationErrors) { body.validationErrors = err.validationErrors; }
+          return { code: err.statusCode, body };
         } else {
           return { code: 505, body: { type: `Transformed${err.name}`, message: `Transformed${err.message}` } };
         }
@@ -49,7 +51,7 @@ describe('Index', async () => {
       lang: 'js',
       output: testClientPath
     });
-    await execP('pnpm install', { cwd: testClientPath });
+    await execP('pnpm install --ignore-workspace', { cwd: testClientPath });
     client = (await import(path.join(testClientPath, 'lib/index.js'))).createClient({ url: apiUrl });
   });
 
@@ -121,7 +123,7 @@ describe('Index', async () => {
 
   it('Correctly accept an object', async () => {
     await client.testApi.object({ object: { us: 5 } }, {}).should.be.rejectedWith({
-      statusCode: 400, type: 'Validation', message: 'object has additional properties'
+      statusCode: 400, type: 'Validation', message: 'object.us is an additional property'
     });
     (await client.testApi.object({ object: {} }, {})).should.deepEqual({ object: {} });
     (await client.testApi.object({ object: { you: 'hi', me: 'ho' } }, {}))
@@ -129,6 +131,9 @@ describe('Index', async () => {
   });
 
   it('Correctly accept a file', async () => {
+    await client.testApi.upload({}, {}).should.be.rejectedWith({
+      statusCode: 400, type: 'Validation', message: 'theFile is required'
+    });
     await client.testApi.upload({ theFile: 'words' }, {}).should.be.resolvedWith({ content: 'words' });
 
     const localPath = `${__dirname}/testClient/test.txt`;
@@ -136,6 +141,44 @@ describe('Index', async () => {
     const fileStream = fs.createReadStream(localPath);
     await client.testApi.upload({ theFile: fileStream }, {}).should.be.resolvedWith({ content: 'Howdy' });
     await fs.remove(localPath);
+  });
+
+  it('Returns multiple validation errors via validationErrors', async () => {
+    let err;
+    try {
+      await client.testApi.shape({ shape: { type: 'rectangle' } }, {});
+    } catch (e) {
+      err = e;
+    }
+    err.statusCode.should.equal(400);
+    err.message.should.equal('shape.width is required');
+    err.validationErrors.should.deepEqual([
+      { field: 'shape.width', validationMessage: 'is required' },
+      { field: 'shape.height', validationMessage: 'is required' }
+    ]);
+  });
+
+  it('Correctly validates recursive schemas', async () => {
+    // nested op field has wrong type — previously a silent no-op under is-my-json-valid
+    await client.testApi.queryFilter({ query: { $and: [{ op: 123 }] } }, {}).should.be.rejectedWith({
+      statusCode: 400, type: 'Validation', message: 'query.$and.0.op is the wrong type'
+    });
+    // valid flat filter
+    (await client.testApi.queryFilter({ query: { field: 'name', op: 'eq' } }, {}))
+      .should.deepEqual({ query: { field: 'name', op: 'eq' } });
+    // valid nested filter
+    (await client.testApi.queryFilter({ query: { $and: [{ field: 'age', op: 'gt' }, { field: 'status', op: 'eq' }] } }, {}))
+      .should.deepEqual({ query: { $and: [{ field: 'age', op: 'gt' }, { field: 'status', op: 'eq' }] } });
+  });
+
+  it('Correctly handles oneOf with discriminator', async () => {
+    await client.testApi.shape({ shape: { type: 'circle', radius: 'oops' } }, {}).should.be.rejectedWith({
+      statusCode: 400, type: 'Validation', message: 'shape.radius is the wrong type'
+    });
+    (await client.testApi.shape({ shape: { type: 'circle', radius: 5 } }, {}))
+      .should.deepEqual({ shape: { type: 'circle', radius: 5 } });
+    (await client.testApi.shape({ shape: { type: 'rectangle', width: 3, height: 4 } }, {}))
+      .should.deepEqual({ shape: { type: 'rectangle', width: 3, height: 4 } });
   });
 
   it('correctly transforms error result', async () => {
