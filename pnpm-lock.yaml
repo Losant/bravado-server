@@ -12,8 +12,8 @@ importers:
   .:
     dependencies:
       bravado-core:
-        specifier: github:Losant/bravado-core#SP-15015
-        version: https://codeload.github.com/Losant/bravado-core/tar.gz/beb62dd784bc6ec2a74ac668809af362ab1755e3
+        specifier: 0.19.0
+        version: 0.19.0
       bunyan:
         specifier: ^1.8.15
         version: 1.8.15
@@ -47,7 +47,7 @@ importers:
         version: 4.2.8
       eslint:
         specifier: ^9.39.4
-        version: 9.39.4
+        version: 9.39.4(supports-color@8.1.1)
       eventsource:
         specifier: ^4.1.0
         version: 4.1.0
@@ -329,14 +329,13 @@ packages:
     engines: {node: '>=8'}
 
   bravado-client-generator@https://codeload.github.com/Losant/bravado-client-generator/tar.gz/9799f94c9ee6cf5237196fd8a50078bdd156794c:
-    resolution: {gitHosted: true, tarball: https://codeload.github.com/Losant/bravado-client-generator/tar.gz/9799f94c9ee6cf5237196fd8a50078bdd156794c}
+    resolution: {gitHosted: true, integrity: sha512-6HH0ZQtyCG4hF8k9Ak+g8N4TiHX7e6vAqs3j2fzripn/NetSZv5N5NoP1420+PhQ24VeKyXkNppy8ktKzf7tjw==, tarball: https://codeload.github.com/Losant/bravado-client-generator/tar.gz/9799f94c9ee6cf5237196fd8a50078bdd156794c}
     version: 1.0.0
     engines: {node: '>=22'}
     hasBin: true
 
-  bravado-core@https://codeload.github.com/Losant/bravado-core/tar.gz/beb62dd784bc6ec2a74ac668809af362ab1755e3:
-    resolution: {gitHosted: true, tarball: https://codeload.github.com/Losant/bravado-core/tar.gz/beb62dd784bc6ec2a74ac668809af362ab1755e3}
-    version: 0.19.0
+  bravado-core@0.19.0:
+    resolution: {integrity: sha512-6+dgkI4gu8oVj3D9x+FO+Nrl26r2DrZxvq7LRNn+Wml3YlB90H23eVgeV9lJWr3cSy7WVdQN28J/STFARsbslA==}
     engines: {node: '>=22'}
 
   browser-stdout@1.3.1:
@@ -2107,14 +2106,14 @@ packages:
 
 snapshots:
 
-  '@eslint-community/eslint-utils@4.9.1(eslint@9.39.4)':
+  '@eslint-community/eslint-utils@4.9.1(eslint@9.39.4(supports-color@8.1.1))':
     dependencies:
-      eslint: 9.39.4
+      eslint: 9.39.4(supports-color@8.1.1)
       eslint-visitor-keys: 3.4.3
 
   '@eslint-community/regexpp@4.12.2': {}
 
-  '@eslint/config-array@0.21.2':
+  '@eslint/config-array@0.21.2(supports-color@8.1.1)':
     dependencies:
       '@eslint/object-schema': 2.1.7
       debug: 4.4.3(supports-color@8.1.1)
@@ -2130,7 +2129,7 @@ snapshots:
     dependencies:
       '@types/json-schema': 7.0.15
 
-  '@eslint/eslintrc@3.3.5':
+  '@eslint/eslintrc@3.3.5(supports-color@8.1.1)':
     dependencies:
       ajv: 6.15.0
       debug: 4.4.3(supports-color@8.1.1)
@@ -2181,9 +2180,9 @@ snapshots:
   '@losant/eslint-config-losant@2.1.0':
     dependencies:
       '@eslint/js': 9.39.4
-      eslint: 9.39.4
-      eslint-plugin-import: 2.32.0(eslint@9.39.4)
-      eslint-plugin-n: 17.15.1(eslint@9.39.4)
+      eslint: 9.39.4(supports-color@8.1.1)
+      eslint-plugin-import: 2.32.0(eslint@9.39.4(supports-color@8.1.1))
+      eslint-plugin-n: 17.15.1(eslint@9.39.4(supports-color@8.1.1))
       eslint-plugin-no-only-tests: 3.4.0
       globals: 17.7.0
     transitivePeerDependencies:
@@ -2417,14 +2416,14 @@ snapshots:
       fs-extra: 11.3.6
       handlebars: 4.7.9
       inflection: 3.0.2
-      json-refs: 3.0.15(supports-color@8.1.1)
+      json-refs: 3.0.15
       lodash: 4.18.1
       qs: 6.15.3
       uri-template: 2.0.0
     transitivePeerDependencies:
       - supports-color
 
-  bravado-core@https://codeload.github.com/Losant/bravado-core/tar.gz/beb62dd784bc6ec2a74ac668809af362ab1755e3:
+  bravado-core@0.19.0:
     dependencies:
       ajv: 8.20.0
       ajv-formats: 3.0.1(ajv@8.20.0)
@@ -2433,7 +2432,7 @@ snapshots:
       fast-jwt: 6.2.4
       fs-extra: 11.3.6
       js-yaml: 4.3.0
-      json-refs: 3.0.15(supports-color@8.1.1)
+      json-refs: 3.0.15
       lodash: 4.18.1
       node-dir: 0.1.17
       traverse: 0.6.11
@@ -2790,9 +2789,9 @@ snapshots:
 
   escape-string-regexp@4.0.0: {}
 
-  eslint-compat-utils@0.5.1(eslint@9.39.4):
+  eslint-compat-utils@0.5.1(eslint@9.39.4(supports-color@8.1.1)):
     dependencies:
-      eslint: 9.39.4
+      eslint: 9.39.4(supports-color@8.1.1)
       semver: 7.8.5
 
   eslint-import-resolver-node@0.3.10:
@@ -2803,23 +2802,23 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.14.0(eslint-import-resolver-node@0.3.10)(eslint@9.39.4):
+  eslint-module-utils@2.14.0(eslint-import-resolver-node@0.3.10)(eslint@9.39.4(supports-color@8.1.1)):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
-      eslint: 9.39.4
+      eslint: 9.39.4(supports-color@8.1.1)
       eslint-import-resolver-node: 0.3.10
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-es-x@7.8.0(eslint@9.39.4):
+  eslint-plugin-es-x@7.8.0(eslint@9.39.4(supports-color@8.1.1)):
     dependencies:
-      '@eslint-community/eslint-utils': 4.9.1(eslint@9.39.4)
+      '@eslint-community/eslint-utils': 4.9.1(eslint@9.39.4(supports-color@8.1.1))
       '@eslint-community/regexpp': 4.12.2
-      eslint: 9.39.4
-      eslint-compat-utils: 0.5.1(eslint@9.39.4)
+      eslint: 9.39.4(supports-color@8.1.1)
+      eslint-compat-utils: 0.5.1(eslint@9.39.4(supports-color@8.1.1))
 
-  eslint-plugin-import@2.32.0(eslint@9.39.4):
+  eslint-plugin-import@2.32.0(eslint@9.39.4(supports-color@8.1.1)):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.9
@@ -2828,9 +2827,9 @@ snapshots:
       array.prototype.flatmap: 1.3.3
       debug: 3.2.7
       doctrine: 2.1.0
-      eslint: 9.39.4
+      eslint: 9.39.4(supports-color@8.1.1)
       eslint-import-resolver-node: 0.3.10
-      eslint-module-utils: 2.14.0(eslint-import-resolver-node@0.3.10)(eslint@9.39.4)
+      eslint-module-utils: 2.14.0(eslint-import-resolver-node@0.3.10)(eslint@9.39.4(supports-color@8.1.1))
       hasown: 2.0.4
       is-core-module: 2.16.2
       is-glob: 4.0.3
@@ -2846,12 +2845,12 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-plugin-n@17.15.1(eslint@9.39.4):
+  eslint-plugin-n@17.15.1(eslint@9.39.4(supports-color@8.1.1)):
     dependencies:
-      '@eslint-community/eslint-utils': 4.9.1(eslint@9.39.4)
+      '@eslint-community/eslint-utils': 4.9.1(eslint@9.39.4(supports-color@8.1.1))
       enhanced-resolve: 5.24.2
-      eslint: 9.39.4
-      eslint-plugin-es-x: 7.8.0(eslint@9.39.4)
+      eslint: 9.39.4(supports-color@8.1.1)
+      eslint-plugin-es-x: 7.8.0(eslint@9.39.4(supports-color@8.1.1))
       get-tsconfig: 4.14.0
       globals: 15.15.0
       ignore: 5.3.2
@@ -2869,14 +2868,14 @@ snapshots:
 
   eslint-visitor-keys@4.2.1: {}
 
-  eslint@9.39.4:
+  eslint@9.39.4(supports-color@8.1.1):
     dependencies:
-      '@eslint-community/eslint-utils': 4.9.1(eslint@9.39.4)
+      '@eslint-community/eslint-utils': 4.9.1(eslint@9.39.4(supports-color@8.1.1))
       '@eslint-community/regexpp': 4.12.2
-      '@eslint/config-array': 0.21.2
+      '@eslint/config-array': 0.21.2(supports-color@8.1.1)
       '@eslint/config-helpers': 0.4.2
       '@eslint/core': 0.17.0
-      '@eslint/eslintrc': 3.3.5
+      '@eslint/eslintrc': 3.3.5(supports-color@8.1.1)
       '@eslint/js': 9.39.4
       '@eslint/plugin-kit': 0.4.1
       '@humanfs/node': 0.16.8
@@ -3410,14 +3409,14 @@ snapshots:
 
   json-buffer@3.0.1: {}
 
-  json-refs@3.0.15(supports-color@8.1.1):
+  json-refs@3.0.15:
     dependencies:
       commander: 4.1.1
       graphlib: 2.1.8
       js-yaml: 3.15.0
       lodash: 4.18.1
       native-promise-only: 0.8.1
-      path-loader: 1.0.12(supports-color@8.1.1)
+      path-loader: 1.0.12
       slash: 3.0.0
       uri-js: 4.4.1
     transitivePeerDependencies:
@@ -3745,10 +3744,10 @@ snapshots:
 
   path-key@3.1.1: {}
 
-  path-loader@1.0.12(supports-color@8.1.1):
+  path-loader@1.0.12:
     dependencies:
       native-promise-only: 0.8.1
-      superagent: 7.1.6(supports-color@8.1.1)
+      superagent: 7.1.6
     transitivePeerDependencies:
       - supports-color
 
@@ -4241,7 +4240,7 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  superagent@7.1.6(supports-color@8.1.1):
+  superagent@7.1.6:
     dependencies:
       component-emitter: 1.3.1
       cookiejar: 2.1.4
