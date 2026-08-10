@@ -175,6 +175,12 @@ describe('Index', async () => {
     await client.testApi.shape({ shape: { type: 'circle', radius: 'oops' } }, {}).should.be.rejectedWith({
       statusCode: 400, type: 'Validation', message: 'shape.radius is the wrong type'
     });
+    await client.testApi.shape({ shape: { type: 'triangle' } }, {}).should.be.rejectedWith({
+      statusCode: 400, type: 'Validation', message: 'shape has unknown type "triangle"'
+    });
+    await client.testApi.shape({ shape: {} }, {}).should.be.rejectedWith({
+      statusCode: 400, type: 'Validation', message: 'shape is missing required type'
+    });
     (await client.testApi.shape({ shape: { type: 'circle', radius: 5 } }, {}))
       .should.deepEqual({ shape: { type: 'circle', radius: 5 } });
     (await client.testApi.shape({ shape: { type: 'rectangle', width: 3, height: 4 } }, {}))
