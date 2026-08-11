@@ -12,8 +12,8 @@ importers:
   .:
     dependencies:
       bravado-core:
-        specifier: github:Losant/bravado-core#SP-15267
-        version: https://codeload.github.com/Losant/bravado-core/tar.gz/9156c676c1fb50facdcce910fab7de2769cc786f
+        specifier: ^0.19.1
+        version: 0.19.1(supports-color@8.1.1)
       bunyan:
         specifier: ^1.8.15
         version: 1.8.15
@@ -38,7 +38,7 @@ importers:
     devDependencies:
       '@losant/eslint-config-losant':
         specifier: ^2.1.0
-        version: 2.1.0
+        version: 2.1.0(supports-color@8.1.1)
       bravado-client-generator:
         specifier: github:Losant/bravado-client-generator#master
         version: https://codeload.github.com/Losant/bravado-client-generator/tar.gz/6a816d404b28be900dce0bc8bc9596751d7f95fb(supports-color@8.1.1)
@@ -330,9 +330,8 @@ packages:
     engines: {node: '>=22'}
     hasBin: true
 
-  bravado-core@https://codeload.github.com/Losant/bravado-core/tar.gz/9156c676c1fb50facdcce910fab7de2769cc786f:
-    resolution: {gitHosted: true, integrity: sha512-OXKYD6nvZ2wbr4UbhUfJ8/sH2pKvwuibWlXNKgumDA87zGsjEIhClLn2BVVaR53J4WTP3HQqZobhlhLMZ+EgxA==, tarball: https://codeload.github.com/Losant/bravado-core/tar.gz/9156c676c1fb50facdcce910fab7de2769cc786f}
-    version: 0.19.1
+  bravado-core@0.19.1:
+    resolution: {integrity: sha512-NV4pNTbTe+9/m54yO+2S5eyvStw2oxj/DRJe2GKLFk/aX9FFNf30piVeitUNlkd5k7K00jAXEYE8S+NBaKef1g==}
     engines: {node: '>=22'}
 
   browser-stdout@1.3.1:
@@ -2097,11 +2096,11 @@ snapshots:
       wrap-ansi: 8.1.0
       wrap-ansi-cjs: wrap-ansi@7.0.0
 
-  '@losant/eslint-config-losant@2.1.0':
+  '@losant/eslint-config-losant@2.1.0(supports-color@8.1.1)':
     dependencies:
       '@eslint/js': 9.39.5
       eslint: 9.39.5(supports-color@8.1.1)
-      eslint-plugin-import: 2.32.0(eslint@9.39.5(supports-color@8.1.1))
+      eslint-plugin-import: 2.32.0(eslint@9.39.5(supports-color@8.1.1))(supports-color@8.1.1)
       eslint-plugin-n: 17.15.1(eslint@9.39.5(supports-color@8.1.1))
       eslint-plugin-no-only-tests: 3.4.0
       globals: 17.9.0
@@ -2339,7 +2338,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  bravado-core@https://codeload.github.com/Losant/bravado-core/tar.gz/9156c676c1fb50facdcce910fab7de2769cc786f:
+  bravado-core@0.19.1(supports-color@8.1.1):
     dependencies:
       ajv: 8.20.0
       ajv-formats: 3.0.1(ajv@8.20.0)
@@ -2496,13 +2495,17 @@ snapshots:
       es-errors: 1.3.0
       is-data-view: 1.0.2
 
-  debug@2.6.9:
+  debug@2.6.9(supports-color@8.1.1):
     dependencies:
       ms: 2.0.0
+    optionalDependencies:
+      supports-color: 8.1.1
 
-  debug@3.2.7:
+  debug@3.2.7(supports-color@8.1.1):
     dependencies:
       ms: 2.1.3
+    optionalDependencies:
+      supports-color: 8.1.1
 
   debug@4.4.3(supports-color@8.1.1):
     dependencies:
@@ -2695,20 +2698,20 @@ snapshots:
       eslint: 9.39.5(supports-color@8.1.1)
       semver: 7.8.5
 
-  eslint-import-resolver-node@0.3.10:
+  eslint-import-resolver-node@0.3.10(supports-color@8.1.1):
     dependencies:
-      debug: 3.2.7
+      debug: 3.2.7(supports-color@8.1.1)
       is-core-module: 2.16.2
       resolve: 2.0.0-next.7
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.14.0(eslint-import-resolver-node@0.3.10)(eslint@9.39.5(supports-color@8.1.1)):
+  eslint-module-utils@2.14.0(eslint-import-resolver-node@0.3.10(supports-color@8.1.1))(eslint@9.39.5(supports-color@8.1.1))(supports-color@8.1.1):
     dependencies:
-      debug: 3.2.7
+      debug: 3.2.7(supports-color@8.1.1)
     optionalDependencies:
       eslint: 9.39.5(supports-color@8.1.1)
-      eslint-import-resolver-node: 0.3.10
+      eslint-import-resolver-node: 0.3.10(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -2719,18 +2722,18 @@ snapshots:
       eslint: 9.39.5(supports-color@8.1.1)
       eslint-compat-utils: 0.5.1(eslint@9.39.5(supports-color@8.1.1))
 
-  eslint-plugin-import@2.32.0(eslint@9.39.5(supports-color@8.1.1)):
+  eslint-plugin-import@2.32.0(eslint@9.39.5(supports-color@8.1.1))(supports-color@8.1.1):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.9
       array.prototype.findlastindex: 1.2.6
       array.prototype.flat: 1.3.3
       array.prototype.flatmap: 1.3.3
-      debug: 3.2.7
+      debug: 3.2.7(supports-color@8.1.1)
       doctrine: 2.1.0
       eslint: 9.39.5(supports-color@8.1.1)
-      eslint-import-resolver-node: 0.3.10
-      eslint-module-utils: 2.14.0(eslint-import-resolver-node@0.3.10)(eslint@9.39.5(supports-color@8.1.1))
+      eslint-import-resolver-node: 0.3.10(supports-color@8.1.1)
+      eslint-module-utils: 2.14.0(eslint-import-resolver-node@0.3.10(supports-color@8.1.1))(eslint@9.39.5(supports-color@8.1.1))(supports-color@8.1.1)
       hasown: 2.0.4
       is-core-module: 2.16.2
       is-glob: 4.0.3
@@ -3789,7 +3792,7 @@ snapshots:
       qs: 6.15.3
       restify-errors: 8.1.0
       semver: 7.8.5
-      send: 0.18.0
+      send: 0.18.0(supports-color@8.1.1)
       spdy: 4.0.2(supports-color@8.1.1)
       uuid: 9.0.1
       vasync: 2.2.1
@@ -3851,9 +3854,9 @@ snapshots:
 
   semver@7.8.5: {}
 
-  send@0.18.0:
+  send@0.18.0(supports-color@8.1.1):
     dependencies:
-      debug: 2.6.9
+      debug: 2.6.9(supports-color@8.1.1)
       depd: 2.0.0
       destroy: 1.2.0
       encodeurl: 1.0.2
