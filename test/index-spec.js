@@ -79,7 +79,8 @@ describe('Index', async () => {
       'access-control-allow-methods': 'DELETE,GET,HEAD,OPTIONS,PATCH,POST,PUT',
       'access-control-allow-origin': 'foo.com',
       'date': resHeaders.date,
-      'connection': 'close',
+      'connection': 'keep-alive',
+      'keep-alive': 'timeout=5',
       'vary': 'origin',
       'access-control-max-age': '86400'
     });
@@ -87,7 +88,8 @@ describe('Index', async () => {
       'server': 'Test API',
       'access-control-allow-origin': '*',
       'date': resHeaders2.date,
-      'connection': 'close',
+      'connection': 'keep-alive',
+      'keep-alive': 'timeout=5',
       'vary': 'origin'
     });
   });
