@@ -2,7 +2,7 @@ name: Lint
 
 on:
   push:
-    branches: [ main, build ]
+    branches: [ master, build ]
   pull_request:
     types: ['opened', 'reopened', 'synchronize']
 
