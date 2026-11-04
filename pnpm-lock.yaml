@@ -167,8 +167,8 @@ importers:
   .:
     dependencies:
       bravado-core:
-        specifier: github:Losant/bravado-core#26-11-housekeeping
-        version: https://codeload.github.com/Losant/bravado-core/tar.gz/f66a5d46c8819d433969d98e2f0f673b1c0a200b(supports-color@8.1.1)
+        specifier: ^0.20.0
+        version: 0.20.0(supports-color@8.1.1)
       bunyan:
         specifier: ^1.8.15
         version: 1.8.15
@@ -460,9 +460,8 @@ packages:
     engines: {node: '>=22'}
     hasBin: true
 
-  bravado-core@https://codeload.github.com/Losant/bravado-core/tar.gz/f66a5d46c8819d433969d98e2f0f673b1c0a200b:
-    resolution: {gitHosted: true, integrity: sha512-b/9MtycAWNDZvpS1nocJJuDYaB0YZ/IXjBTvv5ISYu33pkdegu3zsIyliyG12b1t/RyZ93lp1B7MFHdVzqmNAg==, tarball: https://codeload.github.com/Losant/bravado-core/tar.gz/f66a5d46c8819d433969d98e2f0f673b1c0a200b}
-    version: 0.20.0
+  bravado-core@0.20.0:
+    resolution: {integrity: sha512-cIkHrGlDWQqhHYP5/LZxtcSHa4pI7R7+PhEvBeOusoHLPMUIiF5UNUsTcxppCwM9bIm/04Wu58B8BW7oyI/e+A==}
     engines: {node: '>=22'}
 
   browser-stdout@1.3.1:
@@ -2200,7 +2199,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  bravado-core@https://codeload.github.com/Losant/bravado-core/tar.gz/f66a5d46c8819d433969d98e2f0f673b1c0a200b(supports-color@8.1.1):
+  bravado-core@0.20.0(supports-color@8.1.1):
     dependencies:
       ajv: 8.20.0
       ajv-formats: 3.0.1
