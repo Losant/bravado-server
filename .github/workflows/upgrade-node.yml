@@ -51,25 +51,19 @@ jobs:
       notes: ${{ steps.upgrade.outputs.notes }}
 
     steps:
-      # tag v6.0.2
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - name: Checkout
+        # tag v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
 
-      # tag v5.0.0
       - name: Setup pnpm
-        uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320
+        # tag v3.1.2
+        uses: pnpm/setup@fa36a5ef7dcdefc3a7cb25655c122e00cf6e636e
         with:
-          run_install: false
-
-      # tag v6.3.0
-      - name: Setup Node
-        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f
-        with:
+          require-lockfile: true
           node-version-file: '.node-version'
-          cache: 'pnpm'
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+
       - name: Run Node upgrade
         id: upgrade
         uses: Losant/losant-vex-tools/auto-upgrade-node@main
