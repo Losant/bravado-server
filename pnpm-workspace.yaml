@@ -3,3 +3,4 @@ allowBuilds:
 
 minimumReleaseAgeExclude:
   - bravado-core
+  - '@losant/eslint-config-losant@3.0.0'
